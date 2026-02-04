@@ -11,7 +11,7 @@ export function RadioOption({ group, value, children }) {
   const id = React.useId();
   const { name, callback, value: controlledValue } = React.useContext(RadiosContext);
 
-  return (<label htmlFor={id} key={value}>
+  return (<label htmlFor={id}>
     <input
       type="radio"
       value={value}
