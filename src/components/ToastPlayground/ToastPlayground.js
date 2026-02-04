@@ -82,7 +82,7 @@ function ToastPlayground() {
                 onChange={(event) => {
                   setVariant(event.target.value)
                 }}>
-                {VARIANT_OPTIONS.map((variant) => <RadioOption value={variant} key={variant} remove={removeToast}>{variant}</RadioOption>)}
+                {VARIANT_OPTIONS.map((variant) => <RadioOption value={variant} key={variant}>{variant}</RadioOption>)}
               </Radios>
             </div>
           </div>
