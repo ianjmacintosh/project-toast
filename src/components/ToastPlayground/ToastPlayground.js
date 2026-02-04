@@ -2,23 +2,21 @@ import React from 'react';
 
 import Button from '../Button';
 import { Radios, RadioOption } from '../Radios';
-import Toast from '../Toast';
+import ToastShelf from '../ToastShelf'
 
 import styles from './ToastPlayground.module.css';
 
 const VARIANT_OPTIONS = ['notice', 'warning', 'success', 'error'];
 
 function ToastPlayground() {
-  const [toasts, setToasts] = React.useState(false)
+  const [toasts, setToasts] = React.useState([])
   const [message, setMessage] = React.useState("")
   const [variant, setVariant] = React.useState("notice")
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setToasts(true)
-
-    // addToast({ message, variant })
+    addToast({ message, variant })
   }
 
   const addToast = ({ message, variant }) => {
@@ -30,16 +28,17 @@ function ToastPlayground() {
       variant
     })
 
+
+    setMessage("")
+    setVariant("notice")
+
     setToasts(newToasts)
   }
 
   const removeToast = (id) => {
-    setToasts(false)
-    // const newToasts = [...toasts];
+    let newToasts = [...toasts].filter((toast) => toast.id !== id);
 
-    // newToasts.filter((toast) => toast.id !== id)
-
-    // setToasts(newToasts)
+    setToasts(newToasts)
   }
 
   return (
@@ -48,12 +47,8 @@ function ToastPlayground() {
         <img alt="Cute toast mascot" src="/toast.png" />
         <h1>Toast Playground</h1>
       </header>
-      {toasts && <Toast variant={variant} message={message} clearToast={removeToast} />}
-      {/* {
-        toasts.map(({ id, variant: currentVariant, message: currentMessage }) => {
-          return (<Toast key={id} id={id} variant={currentVariant} message={currentMessage} />)
-        })
-      } */}
+
+      <ToastShelf toasts={toasts} removeToast={removeToast} />
 
       <form onSubmit={handleSubmit}>
         <div className={styles.controlsWrapper}>
