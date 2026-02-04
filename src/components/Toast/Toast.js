@@ -29,6 +29,9 @@ function Toast({ id, children, variant = "notice", clearToast }) {
         <Tag size={24}></Tag>
       </div>
       <p className={styles.content}>
+        <VisuallyHidden>
+          {variant} -
+        </VisuallyHidden>
         {children}
       </p>
       <button
@@ -37,7 +40,6 @@ function Toast({ id, children, variant = "notice", clearToast }) {
         aria-label="Dismiss message"
         aria-live="off">
         <X size={24} />
-        <VisuallyHidden>Dismiss message</VisuallyHidden>
       </button>
     </div>
   );
