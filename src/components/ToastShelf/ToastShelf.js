@@ -4,7 +4,6 @@ import Toast from '../Toast';
 import { ToastContext } from '../ToastProvider';
 
 import styles from './ToastShelf.module.css';
-import VisuallyHidden from '../VisuallyHidden';
 
 function ToastShelf() {
   const { toasts } = React.useContext(ToastContext);
