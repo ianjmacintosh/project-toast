@@ -114,7 +114,7 @@ If you get stuck, you may wish to review the following lessons from the course:
 
 - The toast component should show the message entered in the textarea, essentially acting as a “live preview”.
 - The toast's styling should be affected by the “variant” selected:
-  - The colors can be set by specifying the appropriate class on the top-level `<div>`. By default, it's set to `styles.notice`, but you'll want to dynamically select the class based on the variant (eg. for a success toast, you'll want to apply `styles.success`).
+  - The colors can be set by specifying the appropriate class on the top-level `<div>`. By default, it's set to `styles.notice`, but you'll want to dynamically select the class based on the variant (e.g., for a success toast, you'll want to apply `styles.success`).
   - The icon can be selected from the `ICONS_BY_VARIANT` object. Feel free to re-organize things however you wish!
 - The toast should be hidden by default, but can be shown by clicking the "Pop Toast!” button.
 - The toast can be hidden by clicking the “×” button within the toast.
